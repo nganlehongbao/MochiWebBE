@@ -8,9 +8,8 @@ import ngan.lhb.vocablearn.service.PartOfSpeechService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.parameters.P;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +29,11 @@ public class PartOfSpeechController {
         result.total = partOfSpeechDtos.size();
         result.list = partOfSpeechDtos;
         return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+    
+    @PostMapping
+    public PartOfSpeechDto createPartOfSpeech(@RequestBody PartOfSpeechDto partOfSpeechDto){
+        return partOfSpeechService.add(partOfSpeechDto);
     }
 
 }

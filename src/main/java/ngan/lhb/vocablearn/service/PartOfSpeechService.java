@@ -61,6 +61,8 @@ public class PartOfSpeechService implements CommonService<PartOfSpeechDto> {
 
     @Override
     public PartOfSpeechDto add(PartOfSpeechDto partOfSpeechDto) {
-        return null;
+        PartOfSpeech partOfSpeech = dtoToEntity(partOfSpeechDto);
+        PartOfSpeech result = partOfSpeechRepository.save(partOfSpeech);
+        return entityToDto(result);
     }
 }
