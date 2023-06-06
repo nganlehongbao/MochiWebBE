@@ -1,6 +1,7 @@
 package ngan.lhb.vocablearn.service;
 
 import ngan.lhb.vocablearn.dto.VocabularyDto;
+import ngan.lhb.vocablearn.entity.Vocabulary;
 import ngan.lhb.vocablearn.repository.VocabularyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,14 +30,20 @@ public class VocabularyService implements CommonService<VocabularyDto>{
         return listVocabConvert;
     }
 
-    public VocabularyDto entityToDto (ngan.lhb.vocablearn.entity.Vocabulary vocabulary){
-        return new VocabularyDto(vocabulary.getVocabularyId()
-        , vocabulary.getVocabulary()
-        , vocabulary.getEnglishMean()
-        , vocabulary.getVietnameseMean()
-        , vocabulary.getPartOfSpeech().getPartOfSpeechId()
-        , vocabulary.getCourse().getCourseId()
-        , vocabulary.getThumbnailImage());
+    public VocabularyDto entityToDto (Vocabulary vocabulary){
+        return new VocabularyDto(
+                vocabulary.getVocabularyId()
+                , vocabulary.getVocabulary()
+                , vocabulary.getEnglishMean()
+                , vocabulary.getVietnameseMean()
+                , vocabulary.getPartOfSpeech().getPartOfSpeechId()
+                , vocabulary.getCourse().getCourseId()
+                , vocabulary.getThumbnailImage()
+                , vocabulary.getThumbnailImage()
+                , vocabulary.isDeleteFlag()
+                , vocabulary.getCreateDate()
+                , vocabulary.getUpdateDate()
+        );
     }
 
     @Override

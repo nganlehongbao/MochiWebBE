@@ -1,5 +1,7 @@
 package ngan.lhb.vocablearn.dto;
 
+import java.util.Date;
+
 public class VocabularyDto {
     private Long vocabularyId;
     private String vocabulary;
@@ -8,10 +10,25 @@ public class VocabularyDto {
     private Long partOfSpeechId;
     private Long courseId;
     private String thumbnailImage;
+    private String vocabAudio;
+    private boolean deleteFlag;
+    private Date createDate;
+    private Date updateDate;
 
-    public VocabularyDto(Long vocabularyId, String vocabulary, String englishMean,
-                         String vietnameseMean, Long partOfSpeechId, Long courseId,
-                         String thumbnailImage) {
+    public VocabularyDto(){}
+
+    public VocabularyDto(
+            Long vocabularyId
+            , String vocabulary
+            , String englishMean
+            , String vietnameseMean
+            , Long partOfSpeechId
+            , Long courseId
+            , String thumbnailImage
+            , String vocabAudio
+            , boolean deleteFlag
+            , Date createDate
+            , Date updateDate) {
         this.vocabularyId = vocabularyId;
         this.vocabulary = vocabulary;
         this.englishMean = englishMean;
@@ -19,6 +36,10 @@ public class VocabularyDto {
         this.partOfSpeechId = partOfSpeechId;
         this.courseId = courseId;
         this.thumbnailImage = thumbnailImage;
+        this.vocabAudio = vocabAudio;
+        this.deleteFlag = deleteFlag;
+        this.createDate = createDate;
+        this.updateDate = updateDate;
     }
 
     public Long getVocabularyId() {
@@ -77,9 +98,41 @@ public class VocabularyDto {
         this.thumbnailImage = thumbnailImage;
     }
 
+    public String getVocabAudio() {
+        return vocabAudio;
+    }
+
+    public void setVocabAudio(String vocabAudio) {
+        this.vocabAudio = vocabAudio;
+    }
+
+    public boolean isDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(boolean deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
+
     @Override
     public String toString() {
-        return "Vocabulary{" +
+        return "VocabularyDto{" +
                 "vocabularyId=" + vocabularyId +
                 ", vocabulary='" + vocabulary + '\'' +
                 ", englishMean='" + englishMean + '\'' +
@@ -87,6 +140,10 @@ public class VocabularyDto {
                 ", partOfSpeechId='" + partOfSpeechId + '\'' +
                 ", courseId='" + courseId + '\'' +
                 ", thumbnailImage='" + thumbnailImage + '\'' +
+                ", vocabAudio='" + vocabAudio + '\'' +
+                ", deleteFlag=" + deleteFlag +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
                 '}';
     }
 }

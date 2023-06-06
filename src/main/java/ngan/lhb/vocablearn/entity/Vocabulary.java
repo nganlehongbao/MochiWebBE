@@ -88,6 +88,13 @@ public class Vocabulary {
 
     }
 
+    public Set<VocabularyNotebook> getVocabularyNotebooks() {
+        return vocabularyNotebooks;
+    }
+
+    public void setVocabularyNotebooks(Set<VocabularyNotebook> vocabularyNotebooks) {
+        this.vocabularyNotebooks = vocabularyNotebooks;
+    }
 
     public String getVocabAudio() {
         return vocabAudio;
