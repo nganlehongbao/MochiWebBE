@@ -1,5 +1,7 @@
 package ngan.lhb.vocablearn.service;
 
+import ngan.lhb.vocablearn.dto.CourseDto;
+
 import java.util.List;
 
 public interface CommonService<T> {
@@ -7,5 +9,5 @@ public interface CommonService<T> {
     T getById(Long id);
     void update(T t);
     void delete(Long id);
-    void add(T t);
+    T add(T t);
 }

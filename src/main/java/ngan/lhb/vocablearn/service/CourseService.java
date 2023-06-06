@@ -45,6 +45,10 @@ public class CourseService implements CommonService<CourseDto>{
         );
     }
 
+    public Course dtoToEntity(CourseDto courseDto){
+        return new Course(courseDto.getCourseName());
+    }
+
     @Override
     public CourseDto getById(Long id) {
         return null;
@@ -61,7 +65,9 @@ public class CourseService implements CommonService<CourseDto>{
     }
 
     @Override
-    public void add(CourseDto course) {
-
+    public CourseDto add(CourseDto courseDto) {
+        Course course = dtoToEntity(courseDto);
+        Course result = courseRepository.save(course);
+        return entityToDto(result);
     }
 }
