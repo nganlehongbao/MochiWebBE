@@ -2,7 +2,6 @@ package ngan.lhb.vocablearn.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +22,21 @@ public class PartOfSpeech {
 
     @OneToMany(mappedBy = "partOfSpeech", fetch = FetchType.EAGER)
     List<Vocabulary> vocabularyList = new ArrayList<>();
+
+    public PartOfSpeech(){}
+
+    public PartOfSpeech(Long partOfSpeechId, String name, String acronym) {
+        this.partOfSpeechId = partOfSpeechId;
+        this.name = name;
+        this.acronym = acronym;
+    }
+
+    public PartOfSpeech(Long partOfSpeechId, String name, String acronym, List<Vocabulary> vocabularyList) {
+        this.partOfSpeechId = partOfSpeechId;
+        this.name = name;
+        this.acronym = acronym;
+        this.vocabularyList = vocabularyList;
+    }
 
     public Long getPartOfSpeechId() {
         return partOfSpeechId;

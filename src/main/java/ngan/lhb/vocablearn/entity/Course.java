@@ -2,7 +2,6 @@ package ngan.lhb.vocablearn.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +19,18 @@ public class Course {
 
     @OneToMany(mappedBy = "course", fetch = FetchType.EAGER)
     List<Vocabulary> vocabularyList = new ArrayList<>();
+
+    public Course(){}
+
+    public Course(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public Course(Long courseId, String courseName, List<Vocabulary> vocabularyList) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.vocabularyList = vocabularyList;
+    }
 
     public Long getCourseId() {
         return courseId;

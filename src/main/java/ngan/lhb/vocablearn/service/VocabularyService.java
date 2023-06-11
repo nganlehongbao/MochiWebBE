@@ -62,7 +62,7 @@ public class VocabularyService implements CommonService<VocabularyDto>{
     }
 
     @Override
-    public void add(VocabularyDto vocabularyDto) {
-
+    public VocabularyDto add(VocabularyDto vocabularyDto) {
+        return null;
     }
 }
