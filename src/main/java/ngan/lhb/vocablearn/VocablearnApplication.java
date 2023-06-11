@@ -13,7 +13,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.List;
 
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+@SpringBootApplication
 public class VocablearnApplication {
 
 	public static void main(String[] args) {
